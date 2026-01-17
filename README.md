@@ -1,7 +1,16 @@
-<p align="left">
-  <img src="/.assets/images/rat-spinning.gif" width="50"> <NRC 2026: Micromouse Challenge> 
-> **The official SIUE Automous Robotics Club Github repostiory for the 2026 NRC Micromouse Competition**
-</p>
+<table border="0">
+  <tr>
+    <td>
+      <img src="./assets/images/rat-spinning.gif" width="100">
+    </td>
+    <td>
+      <h1>NRC 2026: Micromouse Challenge</h1>
+      <blockquote>
+        The official SIUE Autonomous Robotics Club GitHub repository for the 2026 NRC Micromouse Competition
+      </blockquote>
+    </td>
+  </tr>
+</table>
 
 
 
