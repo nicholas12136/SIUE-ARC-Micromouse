@@ -1,10 +1,12 @@
-#  NRC 2026: Micromouse Challenge   ![Micromouse Design Diagram](./Assets/images/rat-spinning.gif)
+#  NRC 2026: Micromouse Challenge   
 > **The official SIUE Automous Robotics Club Github repostiory for the 2026 NRC Micromouse Competition**
 
 [![Competition](https://img.shields.io/badge/Competition-NRC_2026-red)](https://irp.cdn-website.com/9297868f/files/uploaded/NRCContestRules2026.pdf)
 [![Platform](https://img.shields.io/badge/Platform-ESP32-blue)](https://randomnerdtutorials.com/getting-started-with-esp32/)
 [![Language](https://img.shields.io/badge/Language-C++-green)](https://www.w3schools.com/cpp/default.asp)
 [![License](https://img.shields.io/badge/Danger-!!!-purple)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
+![Micromouse Design Diagram](./.assets/images/rat-spinning.gif)
 
 ---
 
@@ -21,7 +23,7 @@ Our team is developing an autonomous "Mouse" to compete in the **National Roboti
 * **Staring Place:** Mouse will always start in one of the four corners.
 * **Finish Line:** Goal is to end up in the four-tile room int the middle.
 
-![Micromouse Design Diagram](./Assets/images/NRC_maze_example.png)
+![Micromouse Design Diagram](./.assets/images/NRC_maze_example.png)
 > *Example maze provided in 2026 NRC Contest Manual.*
 ---
 
