@@ -32,19 +32,18 @@ Our team is developing an autonomous "Mouse" to compete in the **National Roboti
 ---
 
 ## 🛠️ Tech Stack
-* **Microcontroller:** ESP32 (High-speed processing & dual-core).
-* **Sensors:** Time-of-Flight (ToF) sensors for precision wall-distance measurement.
-* **Actuators:** N20 Micro-motors with high-resolution magnetic encoders.
-* **Design:** Custom 3D printed chassis and laser-cut components.
+* **Microcontroller:** ESP32.
+* **Sensors:** To Be Determined.
+* **Actuators:** To BE Determined.
+* **Design:** Custom 3D printed chassis.
 
 ---
 
 ## 🧠 Navigation Progress
 We are currently iterating on two main logic paths:
 
-- [x] **Wall-Following:** Basic logic for initial testing.
-- [/] **Flood Fill:** *In Progress* - Primary algorithm for shortest-path optimization.
-- [ ] **Depth Search:** *Planned* - For full maze mapping efficiency.
+- [/] **Flood Fill:** - Works by "pouring water" from the goal to the start, assigning distance values to cells. The mouse then moves toward lower-value cells, effectively calculating the shortest path.
+- [/] **Depth Search:** - Explores as far as possible along each branch before backtracking. It is "blind" to the shortest path until it has explored all options.
 
 ---
 
