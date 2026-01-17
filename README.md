@@ -19,7 +19,9 @@ Our team is developing an autonomous "Mouse" to compete in the **National Roboti
 * **Scoring:** Based on the fastest run + search time penalties.
 * **Wall Hugging:** It is explicitly mentioned in the rules that steps will be taken to diminish this searching algorithm. 
 * **Staring Place:** Mouse will always start in one of the four corners.
-* **Finish Line:** Goal is to end up in the four tile room int the middle.
+* **Finish Line:** Goal is to end up in the four-tile room int the middle.
+
+![Micromouse Design Diagram](./assets/images/NRC_maze_example.png)
 
 ---
 
