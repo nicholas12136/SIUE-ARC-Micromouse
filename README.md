@@ -41,7 +41,12 @@ Our team is developing an autonomous "Mouse" to compete in the **National Roboti
 * **Finish Line:** Goal is to end up in the four-tile room in the middle.
 * **Winner Winner Chicken Dinner:** The minimum run time shall be the robot's official time (Dash Attempt). 
 
-![Micromouse Design Diagram](./.assets/images/NRC_maze_example.png)
+<p align="center">
+  <img src=".assets/images/NRC_maze_example.png" width="600">
+</p> 
+
+
+![Micromouse Design Diagram]
 > *Example maze provided in 2026 NRC Contest Manual.*
 ---
 
