@@ -69,7 +69,7 @@ Our team is developing an autonomous "Mouse" to compete in the **National Roboti
 ## 🧠 Navigation Progress
 We are currently iterating on two main logic paths:
 
--  **Flood Fill:** - Works by "pouring water" from the goal to the start, assigning distance values to cells. The mouse then moves toward lower-value cells, effectively calculating the shortest path. ( [**Click for video explanation**](https://www.youtube.com/watch?v=ktn3C7aXVR0) )
+-  **Flood Fill:** - Works by "pouring water" from the goal to the start, assigning distance values to cells. The mouse then moves toward lower-value cells, effectively calculating the shortest path. ([**Video explanation**](https://www.youtube.com/watch?v=ktn3C7aXVR0))
 -  **Depth Search:** - Explores as far as possible along each branch before backtracking. It is "blind" to the shortest path until it has explored all options.
 
 ---
