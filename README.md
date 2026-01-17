@@ -1,5 +1,5 @@
 # 🐭 NRC 2026: Micromouse Challenge
-> **The official SIUE Automous Robotics Club Github repostiory for the NRC Micromouse Competition**
+> **The official SIUE Automous Robotics Club Github repostiory for the 2026 NRC Micromouse Competition**
 
 [![Competition](https://img.shields.io/badge/Competition-NRC_2026-red)](https://irp.cdn-website.com/9297868f/files/uploaded/NRCContestRules2026.pdf)
 [![Platform](https://img.shields.io/badge/Platform-ESP32-blue)](https://randomnerdtutorials.com/getting-started-with-esp32/)
@@ -12,10 +12,14 @@
 Our team is developing an autonomous "Mouse" to compete in the **National Robotics Challenge**. The robot must navigate a $10 \times 10$ unit square maze, mapping the environment in real-time to find the fastest path to the center.
 
 ### ⚖️ Competition Constraints (NRC Rules)
-* **Size:** Max $7" \times 7" \times 7"$.
+* **Mouse Size:** Max $7" \times 7" \times 7"$.
+* **Maze Size:** $10 \times 10$ of $10" \times 10"$ tiles.
 * **Time:** 10-minute total run time.
 * **Autonomy:** No external communication once the maze layout is disclosed.
 * **Scoring:** Based on the fastest run + search time penalties.
+* **Wall Hugging:** It is explicitly mentioned in the rules that steps will be taken to diminish this searching algorithm. 
+* **Staring Place:** Mouse will always start in one of the four corners.
+* **Finish Line:** Goal is to end up in the four tile room int the middle.
 
 ---
 
