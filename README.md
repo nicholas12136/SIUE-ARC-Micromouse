@@ -6,7 +6,9 @@
 [![Language](https://img.shields.io/badge/Language-C++-green)](https://www.w3schools.com/cpp/default.asp)
 [![License](https://img.shields.io/badge/Danger-!!!-purple)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
-![Micromouse Design Diagram](./.assets/images/rat-spinning.gif)
+<p align="center">
+  <img src="/.assets/images/rat-spinning.gif" width="600">
+</p>
 
 ---
 
