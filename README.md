@@ -1,6 +1,6 @@
 <table border="0">
   <tr>
-    <td valign="left">
+    <td valign="center">
       <img src="./assets/images/rat-spinning.gif" width="100">
     </td>
     <td>
