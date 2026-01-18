@@ -46,11 +46,7 @@ Our team is developing an autonomous "Mouse" to compete in the **National Roboti
 * **Winner Winner Chicken Dinner:** The minimum run time shall be the robot's official time (Dash Attempt).
 </ul>
 </details>
-
-* **Wall Hugging:** It is explicitly mentioned in the rules that steps will be taken to diminish this searching algorithm. 
-* **Starting Place:** Mouse will always start in one of the four corners, the start square will be bounded on three sides by walls.
-* **Finish Line:** Goal is to end up in the four-tile room in the middle, the destination square has only one entrance. However, multiple paths to the destination square are allowed and are to be expected.
-* **Winner Winner Chicken Dinner:** The minimum run time shall be the robot's official time (Dash Attempt). 
+ 
 
 <p align="center">
   <img src=".assets/images/NRC_maze_example.png" width="600">
