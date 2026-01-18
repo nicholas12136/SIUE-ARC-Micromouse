@@ -87,8 +87,8 @@ We are currently iterating on two main logic paths:
 3. **Clone the Repo:**
    ```bash 
    git clone [https://github.com/](https://github.com/)[your-username]/[your-repo-name].git
-<ul>
-<details>
+</ul>
+</details>
 
 ---
 
