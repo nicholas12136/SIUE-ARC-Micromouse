@@ -85,7 +85,8 @@ We are currently iterating on two main logic paths:
 1. **Install VS Code**
 2. **Install PlatformIO Extension** (for ESP32 development).
 3. **Clone the Repo:**
-   ```bash git clone [https://github.com/](https://github.com/)[your-username]/[your-repo-name].git
+   ```bash 
+   <git clone [https://github.com/](https://github.com/)[your-username]/[your-repo-name].git>
 
 ---
 
