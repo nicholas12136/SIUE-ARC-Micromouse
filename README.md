@@ -77,7 +77,7 @@ We are currently iterating on two main logic paths:
 
 ---
 
-## 🏁 Development Setup
+## 🏁 Development Setu
 
 <details>
 <summary><b>Click to expand: Software Installation</b></summary>
