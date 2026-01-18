@@ -62,7 +62,7 @@ deemed aborted, and the robot must be removed from the maze.
 run time of that run
 * The minimum run time shall be the robot's official time (Dash Attempt).
 
-**Scoring Criteria:**
+__Scoring Criteria:__
 * Robots that do not enter the center square will be ranked by the maximum number of cells they
 consecutively transverse without being touched. However, judges are not required to give any
 rankings to robots who do not finish and may declare no winners or declare less than three
