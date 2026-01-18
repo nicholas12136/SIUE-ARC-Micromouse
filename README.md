@@ -87,3 +87,28 @@ We are currently iterating on two main logic paths:
 3. **Clone the Repo:**
    ```bash
    git clone [https://github.com/](https://github.com/)[your-username]/[your-repo-name].git
+
+---
+
+## 📈 Recent Progress
+
+<table border="0">
+  <tr>
+    <td width="50%" align="center">
+      <img src="./assets/images/mazev1.jpg" width="100%">
+    </td>
+    <td width="50%" align="center">
+      <video src="./assets/images/mouse-running.mp4" width="100%" controls muted>
+        Your browser does not support the video tag.
+      </video>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <i>Visualization of the <b>Flood Fill Algorithm</b> mapping the 10x10 maze.</i>
+    </td>
+    <td align="center">
+      <i>Mouse running the course with <b>preliminary navigation logic</b>.</i>
+    </td>
+  </tr>
+</table>
