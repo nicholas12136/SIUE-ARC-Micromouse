@@ -112,7 +112,7 @@ We are currently iterating on two main logic paths:
       <i>Mouse running the course with <b>preliminary navigation logic</b>.</i>
     </td>
   </tr>
-
-  > *Example maze provided in 2026 NRC Contest Manual.*
----
 </table>
+
+ > *Maze provided is also a work in progress.*
+---
