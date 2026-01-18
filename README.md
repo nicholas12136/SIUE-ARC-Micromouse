@@ -38,7 +38,7 @@ Our team is developing an autonomous "Mouse" to compete in the **National Roboti
 * **Scoring:** Based on a factor of things but overall shortest time wins.
 
 <details>
-<summary><b>Click for more indepth rules</b></summary>
+<summary><b>Click for more extensive rules</b></summary>
 
 * **Wall Hugging:** It is explicitly mentioned in the rules that steps will be taken to diminish this searching algorithm. 
 * **Starting Place:** Mouse will always start in one of the four corners, the start square will be bounded on three sides by walls.
