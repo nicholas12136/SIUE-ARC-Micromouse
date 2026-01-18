@@ -43,6 +43,9 @@ Our team is developing an autonomous "Mouse" to compete in the **National Roboti
 * **Wall Hugging:** It is explicitly mentioned in the rules that steps will be taken to diminish this searching algorithm. 
 * **Starting Place:** Mouse will always start in one of the four corners, the start square will be bounded on three sides by walls.
 * **Finish Line:** Goal is to end up in the four-tile room in the middle, the destination square has only one entrance. However, multiple paths to the destination square are allowed and are to be expected.
+* **Don't Pass Go:** If a robot re-enters the start square before entering the destination square on a run that run is aborted and a new run will begin with a new time that starts when the starting square is exited.
+* **Infomaxxing:** The robot may, after reaching the destination square, continue to navigate the maze for as long
+as their total maze time allows. The time taken will not count toward any run.
 * **Winner Winner Chicken Dinner:** The minimum run time shall be the robot's official time (Dash Attempt).
 </ul>
 </details>
