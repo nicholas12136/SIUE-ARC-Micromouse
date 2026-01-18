@@ -86,10 +86,7 @@ We are currently iterating on two main logic paths:
 2. **Install PlatformIO Extension** (for ESP32 development).
 3. **Clone the Repo:**
    ```bash
-   git clone [https://github.com/](https://github.com/)[your-username]/[your-repo-name].git
-
-
-
+   git clone [https://github.com/](https://github.com/)[your-username]/[your-repo-name].git```
 
 ---
 
