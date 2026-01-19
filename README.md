@@ -135,10 +135,7 @@ We are currently iterating on two main logic paths:
 <table border="0">
   <tr>
     <td width="50%" align="center">
-      <img src=".assets/images/mazev1.png" width="100%">
-    </td>
-    <td width="50%" align="center">
-      <img src=".assets/images/mouse-running.gif" width="100%">
+      <img src=".assets/images/mouse-running2.gif" width="100%">
       </img>
     </td>
   </tr>
@@ -146,11 +143,5 @@ We are currently iterating on two main logic paths:
     <td align="center">
       <i>Visualization of the <b>Flood Fill Algorithm</b> mapping the 10x10 maze.</i>
     </td>
-    <td align="center">
-      <i>Mouse running the course with <b>preliminary navigation logic</b>.</i>
-    </td>
   </tr>
 </table>
-
- > *Maze provided is also a work in progress.*
----
