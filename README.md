@@ -135,7 +135,7 @@ We are currently iterating on two main logic paths:
 <table border="0">
   <tr>
     <td width="50%" align="center">
-      <img src=".assets/images/mouse-running2.gif" width="100%">
+      <img src=".assets/images/mouse-running2.gif" width="65%">
       </img>
     </td>
   </tr>
