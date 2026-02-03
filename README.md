@@ -26,10 +26,10 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 Our team is developing an autonomous "Mouse" to compete in the **National Robotics Challenge**. The robot must navigate a $10 \times 10$ unit square maze, mapping the environment in real-time to find the fastest path to the center.
 
-### 📐 Competition Constraints (NRC Rules)
+### Competition Constraints (NRC Rules)
 **Some Basics:**
 * **Mouse Size:** Max $7" \times 7" \times 7"$.
 * **Maze Size:** $10 \times 10$ of $10" \times 10"$ tiles.
@@ -86,7 +86,7 @@ robot (changing algorithms is allowed)
 > *Example maze provided in 2026 NRC Contest Manual.*
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 | Icon | Folder | Purpose |
 | :--- | :--- | :--- |
@@ -99,7 +99,7 @@ robot (changing algorithms is allowed)
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **Microcontroller:** ESP32.
 * **Sensors:** To Be Determined.
 * **Actuators:** To Be Determined.
@@ -107,7 +107,7 @@ robot (changing algorithms is allowed)
 
 ---
 
-## 🧠 Navigation Progress
+## Navigation Progress
 We are currently iterating on two main logic paths:
 
 -  **Flood Fill:** A form of Breadth-First Searching, it works by "pouring water" from the goal to the start, assigning distance values to cells. The mouse then moves toward lower-value cells, effectively calculating the shortest path. ([**Video explanation**](https://www.youtube.com/watch?v=ktn3C7aXVR0))
@@ -115,7 +115,7 @@ We are currently iterating on two main logic paths:
 
 ---
 
-## 🏁 Development Setup
+## Development Setup
 
 <details>
 <summary><b>Click to expand: Software Installation</b></summary>
@@ -130,7 +130,7 @@ We are currently iterating on two main logic paths:
 
 ---
 
-## 📈 Recent Progress
+## Recent Progress
 
 <table border="0">
   <tr>
