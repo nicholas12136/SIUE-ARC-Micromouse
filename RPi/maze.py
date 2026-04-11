@@ -476,6 +476,12 @@ def run():
             print(f"Return step {return_path_idx + 1}/{len(return_path)}")
             execute_path_step(return_path, return_path_idx)
             return_path_idx += 1
+            s = read_sensors()
+            if s:
+                print(f"  F:{int(s['wallFront'])} "
+                   f"L:{int(s['wallLeft'])}(raw:{s['rawLeft']}) "
+                   f"R:{int(s['wallRight'])}(raw:{s['rawRight']}) "
+                   f"encL:{s['encLeft']} encR:{s['encRight']}")
             continue
 
         # ── FAST RUN ─────────────────────────────────────────────
@@ -488,6 +494,12 @@ def run():
             print(f"Fast step {fast_path_idx + 1}/{len(fast_path)}")
             execute_path_step(fast_path, fast_path_idx)
             fast_path_idx += 1
+            s = read_sensors()
+            if s:
+                print(f"  F:{int(s['wallFront'])} "
+                      f"L:{int(s['wallLeft'])}(raw:{s['rawLeft']}) "
+                      f"R:{int(s['wallRight'])}(raw:{s['rawRight']}) "
+                      f"encL:{s['encLeft']} encR:{s['encRight']}")
 
             # Stop as soon as we enter any goal cell
             for (gx, gy) in GOAL_CELLS:
@@ -498,11 +510,12 @@ def run():
 
             continue
 
-        # ── SEARCHING ────────────────────────────────────────────
+
+        # ── SEARCHING ────────────────────────────────────────────────
         s = read_sensors()
         if s is None:
             print("Sensor read failed — aborting.")
-            break
+        break
 
         update_walls(s)
         flood_fill(GOAL_CELLS)
@@ -510,7 +523,10 @@ def run():
         print(f"At ({current_x},{current_y}) "
               f"facing {HEADING_NAMES[heading]} "
               f"dist={distances[current_x][current_y]}")
-        print_sensors(s, "  Sensors")
+        print(f"  F:{int(s['wallFront'])} "
+              f"L:{int(s['wallLeft'])}(raw:{s['rawLeft']}) "
+              f"R:{int(s['wallRight'])}(raw:{s['rawRight']}) "
+              f"encL:{s['encLeft']} encR:{s['encRight']}")
 
         # Check if center reached
         if distances[current_x][current_y] == 0:
@@ -556,7 +572,6 @@ if __name__ == "__main__":
         run()
     except KeyboardInterrupt:
         print("\nAborted by user.")
-        send_command  # motors already stopped by Romi
     finally:
         print(f"\nFinal position: ({current_x}, {current_y})")
         print(f"Final heading:  {HEADING_NAMES[heading]}")
