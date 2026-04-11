@@ -8,13 +8,11 @@ import time
 bus     = smbus2.SMBus(1)
 ADDRESS = 0x14
 
-# How long to wait after each command before polling for completion
-# Conservative values — tune down once everything is stable
 WAIT_TIMES = {
-    1: 3.0,   # move forward
-    2: 2.0,   # turn right
-    3: 2.0,   # turn left
-    4: 3.0    # turn 180
+    1: 3.0,
+    2: 2.0,
+    3: 2.0,
+    4: 3.0
 }
 
 COMMANDS = {
@@ -93,6 +91,16 @@ def print_sensors(s, label=""):
           f"L:{int(s['wallLeft'])} "
           f"R:{int(s['wallRight'])}")
 
+def print_sensors_full(s, label=""):
+    """Print full sensor state including raw values and encoders."""
+    if s is None:
+        print(f"{label} → read failed")
+        return
+    print(f"{label} → F:{int(s['wallFront'])} "
+          f"L:{int(s['wallLeft'])}(raw:{s['rawLeft']}) "
+          f"R:{int(s['wallRight'])}(raw:{s['rawRight']}) "
+          f"encL:{s['encLeft']} encR:{s['encRight']}")
+
 def wait_for_button(message="Press button A on Romi to continue..."):
     print(message)
     while True:
@@ -120,32 +128,22 @@ def wait_for_button(message="Press button A on Romi to continue..."):
 WIDTH  = 10
 HEIGHT = 10
 
-# wall_map[x][y] bitmask — same as Main.cpp
-# bit 0 = North, bit 1 = East, bit 2 = South, bit 3 = West
 wall_map  = [[0]*HEIGHT   for _ in range(WIDTH)]
-
-# distances[x][y] = flood fill distance to goal. 255 = unreachable
 distances = [[255]*HEIGHT for _ in range(WIDTH)]
-
-# visited[x][y] = True once robot has physically entered that cell
 visited   = [[False]*HEIGHT for _ in range(WIDTH)]
 
-# Robot position and heading
 current_x = 0
 current_y = 0
 heading   = 0  # 0=North 1=East 2=South 3=West
 
 HEADING_NAMES = {0: 'North', 1: 'East', 2: 'South', 3: 'West'}
 
-# Direction vectors — matches Main.cpp
-DX = [0,  1, 0, -1]   # North, East, South, West
+DX = [0,  1, 0, -1]
 DY = [1,  0,-1,  0]
-DB = [1,  2, 4,  8]   # bitmasks for wall_map
+DB = [1,  2, 4,  8]
 
-# Goal cells — center 2x2 of 10x10 maze
 GOAL_CELLS = [(4,4), (4,5), (5,4), (5,5)]
 
-# Phase tracking
 SEARCHING = 0
 RETURNING = 1
 FAST_RUN  = 2
@@ -153,7 +151,6 @@ FINISHED  = 3
 
 current_phase = SEARCHING
 
-# Path storage
 exploration_path = []
 return_path      = []
 fast_path        = []
@@ -163,27 +160,21 @@ fast_path        = []
 # ═══════════════════════════════════════════════════════════════
 
 def set_wall(x, y, direction):
-    """Register a wall at (x,y) in given direction and its neighbor."""
     global wall_map
-
     wall_map[x][y] |= DB[direction]
-
-    # Also set the wall on the neighboring cell — same as Main.cpp
     if direction == 0 and y < HEIGHT-1: wall_map[x][y+1] |= DB[2]
     if direction == 1 and x < WIDTH-1:  wall_map[x+1][y] |= DB[3]
     if direction == 2 and y > 0:        wall_map[x][y-1] |= DB[0]
     if direction == 3 and x > 0:        wall_map[x-1][y] |= DB[1]
 
 def update_walls(s):
-    """Read sensors and register walls around current position."""
     if s['wallFront']: set_wall(current_x, current_y, heading)
     if s['wallLeft']:  set_wall(current_x, current_y, (heading + 3) % 4)
     if s['wallRight']: set_wall(current_x, current_y, (heading + 1) % 4)
 
 def register_boundary_walls():
-    """Register the known maze boundary walls at start."""
-    set_wall(0, 0, 2)  # south boundary
-    set_wall(0, 0, 3)  # west boundary
+    set_wall(0, 0, 2)
+    set_wall(0, 0, 3)
 
 # ═══════════════════════════════════════════════════════════════
 # FLOOD FILL
@@ -192,27 +183,20 @@ def register_boundary_walls():
 from collections import deque
 
 def flood_fill(targets, visited_only=False):
-    """BFS flood fill from target cells outward.
-    targets     — list of (x,y) goal cells to fill from
-    visited_only — if True, only expand through visited cells
-    """
     global distances
 
-    # Reset all distances
     for x in range(WIDTH):
         for y in range(HEIGHT):
             distances[x][y] = 255
 
     queue = deque()
 
-    # Seed the queue with target cells
     for (tx, ty) in targets:
         if visited_only and not visited[tx][ty]:
             continue
         distances[tx][ty] = 0
         queue.append((tx, ty))
 
-    # BFS outward
     while queue:
         x, y = queue.popleft()
         d    = distances[x][y]
@@ -221,16 +205,12 @@ def flood_fill(targets, visited_only=False):
             nx = x + DX[direction]
             ny = y + DY[direction]
 
-            # Bounds check
             if nx < 0 or nx >= WIDTH or ny < 0 or ny >= HEIGHT:
                 continue
-            # Wall check
             if wall_map[x][y] & DB[direction]:
                 continue
-            # Already visited check
             if distances[nx][ny] != 255:
                 continue
-            # Visited only restriction
             if visited_only and not visited[nx][ny]:
                 continue
 
@@ -242,28 +222,24 @@ def flood_fill(targets, visited_only=False):
 # ═══════════════════════════════════════════════════════════════
 
 def robot_turn_right():
-    """Turn right and update heading."""
     global heading
     turn_right()
     heading = (heading + 1) % 4
     print(f"  Turned right — now facing {HEADING_NAMES[heading]}")
 
 def robot_turn_left():
-    """Turn left and update heading."""
     global heading
     turn_left()
     heading = (heading + 3) % 4
     print(f"  Turned left — now facing {HEADING_NAMES[heading]}")
 
 def robot_move_forward():
-    """Move forward one cell and update position and visited map."""
     global current_x, current_y
     s = move_forward()
     current_x += DX[heading]
     current_y += DY[heading]
     visited[current_x][current_y] = True
 
-    # Record move during searching — moved here from main loop
     if current_phase == SEARCHING:
         exploration_path.append(heading)
 
@@ -273,13 +249,11 @@ def robot_move_forward():
 def face_direction(target_dir):
     global heading
 
-    # Check if 180 turn is needed — use dedicated command instead of two 90s
     if (target_dir - heading + 4) % 4 == 2:
         turn_180()
         heading = (heading + 2) % 4
         return
 
-    # Otherwise use 90 degree turns as before
     while heading != target_dir:
         diff = (target_dir - heading + 4) % 4
         if diff == 3:
@@ -288,7 +262,6 @@ def face_direction(target_dir):
             robot_turn_right()
 
 def detect_initial_heading(s):
-    """Detect open passage at start and align heading — same as Main.cpp."""
     global heading
     if not s['wallFront']:
         heading = 0
@@ -308,8 +281,6 @@ def detect_initial_heading(s):
 # ═══════════════════════════════════════════════════════════════
 
 def trace_path(start_x, start_y, visited_only=False):
-    """Trace shortest path from start to nearest goal by following
-    decreasing distance values. Returns list of directions."""
     path = []
     x, y = start_x, start_y
     limit = WIDTH * HEIGHT
@@ -344,7 +315,6 @@ def trace_path(start_x, start_y, visited_only=False):
 # ═══════════════════════════════════════════════════════════════
 
 def build_return_path(center_x, center_y):
-    """Build path from center back to (0,0) through visited cells."""
     flood_fill([(0, 0)], visited_only=True)
 
     if distances[center_x][center_y] != 255:
@@ -353,14 +323,12 @@ def build_return_path(center_x, center_y):
             print(f"Return path: smart route, {len(path)} steps.")
             return path
 
-    # Fallback — reverse exploration path
     print("Smart return failed — using reversed exploration path.")
     fallback = [(d + 2) % 4 for d in reversed(exploration_path)]
     print(f"Return path: fallback retrace, {len(fallback)} steps.")
     return fallback
 
 def build_fast_path():
-    """Build optimal path from (0,0) to center through visited cells."""
     flood_fill(GOAL_CELLS, visited_only=True)
 
     if distances[0][0] == 255:
@@ -376,7 +344,6 @@ def build_fast_path():
 # ═══════════════════════════════════════════════════════════════
 
 def move_to_best_neighbor():
-    """Move to neighboring cell with lowest flood fill distance."""
     best_dir   = -1
     min_score  = 10000
 
@@ -390,7 +357,6 @@ def move_to_best_neighbor():
         if nx < 0 or nx >= WIDTH or ny < 0 or ny >= HEIGHT:
             continue
 
-        # Prefer lower distance, slight penalty for turning
         score = distances[nx][ny] * 10
         if direction != heading:
             score += 1
@@ -410,7 +376,6 @@ def move_to_best_neighbor():
 # ═══════════════════════════════════════════════════════════════
 
 def execute_path_step(path, index):
-    """Face the required direction and move forward."""
     next_dir = path[index]
     face_direction(next_dir)
     robot_move_forward()
@@ -420,7 +385,6 @@ def execute_path_step(path, index):
 # ═══════════════════════════════════════════════════════════════
 
 def initialize():
-    """Reset all maze state and set up starting conditions."""
     global current_x, current_y, heading, current_phase
     global wall_map, distances, visited
     global exploration_path, return_path, fast_path
@@ -451,7 +415,6 @@ def initialize():
 # ═══════════════════════════════════════════════════════════════
 
 def run():
-    """Main maze solving loop."""
     global current_phase, return_path, fast_path
     global exploration_path
 
@@ -478,10 +441,7 @@ def run():
             return_path_idx += 1
             s = read_sensors()
             if s:
-                print(f"  F:{int(s['wallFront'])} "
-                   f"L:{int(s['wallLeft'])}(raw:{s['rawLeft']}) "
-                   f"R:{int(s['wallRight'])}(raw:{s['rawRight']}) "
-                   f"encL:{s['encLeft']} encR:{s['encRight']}")
+                print_sensors_full(s, "  After step")
             continue
 
         # ── FAST RUN ─────────────────────────────────────────────
@@ -496,12 +456,8 @@ def run():
             fast_path_idx += 1
             s = read_sensors()
             if s:
-                print(f"  F:{int(s['wallFront'])} "
-                      f"L:{int(s['wallLeft'])}(raw:{s['rawLeft']}) "
-                      f"R:{int(s['wallRight'])}(raw:{s['rawRight']}) "
-                      f"encL:{s['encLeft']} encR:{s['encRight']}")
+                print_sensors_full(s, "  After step")
 
-            # Stop as soon as we enter any goal cell
             for (gx, gy) in GOAL_CELLS:
                 if current_x == gx and current_y == gy:
                     current_phase = FINISHED
@@ -510,12 +466,11 @@ def run():
 
             continue
 
-
-        # ── SEARCHING ────────────────────────────────────────────────
+        # ── SEARCHING ────────────────────────────────────────────
         s = read_sensors()
         if s is None:
             print("Sensor read failed — aborting.")
-        break
+            break  # ← now correctly indented inside if block
 
         update_walls(s)
         flood_fill(GOAL_CELLS)
@@ -523,12 +478,8 @@ def run():
         print(f"At ({current_x},{current_y}) "
               f"facing {HEADING_NAMES[heading]} "
               f"dist={distances[current_x][current_y]}")
-        print(f"  F:{int(s['wallFront'])} "
-              f"L:{int(s['wallLeft'])}(raw:{s['rawLeft']}) "
-              f"R:{int(s['wallRight'])}(raw:{s['rawRight']}) "
-              f"encL:{s['encLeft']} encR:{s['encRight']}")
+        print_sensors_full(s, "  Sensors")
 
-        # Check if center reached
         if distances[current_x][current_y] == 0:
             print("Center reached! Building return path...")
             return_path     = build_return_path(current_x, current_y)
@@ -546,7 +497,6 @@ if __name__ == "__main__":
     print("Romi Maze Solver")
     print("════════════════")
 
-    # Verify connection
     print("\nTesting connection...")
     s = read_sensors()
     if s is None:
@@ -554,17 +504,14 @@ if __name__ == "__main__":
         exit()
     print("Connection OK.")
 
-    # Initialize maze
     print()
     initialize()
 
-    # Detect starting heading from sensors
     print("\nDetecting initial heading...")
     s = read_sensors()
     detect_initial_heading(s)
     print(f"Ready — facing {HEADING_NAMES[heading]}")
 
-    # Confirm before starting
     print()
     wait_for_button("Place robot in start corner. Press button A to begin.")
 
