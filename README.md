@@ -139,7 +139,9 @@ Maze solving is broken into three sequential phases:
 ## Development Setup
 
 <details>
-<summary><b>Click to expand: Cloning the Repository (GitHub Desktop)</b></summary>
+<summary><b>Click to expand: Software Installation & Setup</b></summary>
+
+### Cloning the Repository (GitHub Desktop)
 
 1. Download and install [GitHub Desktop](https://desktop.github.com/).
 2. Sign in with your GitHub account.
@@ -150,12 +152,9 @@ Maze solving is broken into three sequential phases:
    ```
 5. Choose a local path and click **Clone**.
 
-</details>
-
 ---
 
-<details>
-<summary><b>Click to expand: Romi 32U4 Setup (Arduino IDE)</b></summary>
+### Romi 32U4 Setup (Arduino IDE)
 
 1. Download and install the [Arduino IDE](https://www.arduino.cc/en/software).
 2. Open Arduino IDE and go to **File → Preferences**.
@@ -170,12 +169,9 @@ Maze solving is broken into three sequential phases:
    * Search for **PololuRPiSlave** and install it.
 7. Open the sketch from the [`/Romi32u4`](./Romi32u4) folder and upload to the board.
 
-</details>
-
 ---
 
-<details>
-<summary><b>Click to expand: Raspberry Pi SSH Setup (Windows)</b></summary>
+### Raspberry Pi SSH Setup (Windows)
 
 1. Ensure SSH is enabled on the Raspberry Pi (via `raspi-config` or the Pi OS desktop under **Preferences → Raspberry Pi Configuration → Interfaces**).
 2. Connect the Pi to the same network as your Windows machine (or directly via USB/Ethernet).
@@ -187,12 +183,9 @@ Maze solving is broken into three sequential phases:
 4. Enter the Pi's password when prompted (default is `raspberry` unless changed).
 5. Once connected, navigate to the project files and run the Python scripts from the [`/RPi`](./RPi) folder as needed.
 
-</details>
-
 ---
 
-<details>
-<summary><b>Click to expand: Legacy ESP32 Setup (VS Code + PlatformIO)</b></summary>
+### Legacy ESP32 Setup (VS Code + PlatformIO)
 
 > *This setup applies to the code found in [`/Past Firmware`](./Past%20Firmware) only.*
 
