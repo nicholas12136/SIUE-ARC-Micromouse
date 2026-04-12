@@ -174,7 +174,7 @@ Maze solving is broken into three sequential phases:
 ### Raspberry Pi SSH Setup (Windows)
 
 1. Ensure SSH is enabled on the Raspberry Pi (via `raspi-config` or the Pi OS desktop under **Preferences → Raspberry Pi Configuration → Interfaces**).
-2. Connect the Pi to the same network as your Windows machine (or directly via USB/Ethernet).
+2. Connect the Pi to the same network as your Windows machine (or directly via USB/Ethernet/Hotspot).
 3. Open **Windows Terminal** or **Command Prompt** and run:
    ```bash
    ssh pi@<raspberry-pi-ip-address>
