@@ -90,7 +90,7 @@ robot (changing algorithms is allowed)
 
 | Folder | Purpose |
 | :--- | :--- |
-| [`/Past Firmware`](./Past%20Firmware) | Legacy ESP32 source code, kept for reference if an ESP32-based design is revisited. |
+| [`/Past Firmware`](./Past%20Firmware) | ESP32 source code, kept for reference when an ESP32-based design is revisited. |
 | [`/Hardware`](./Hardware) | Schematics for all current components and STP print files for the robot chassis. |
 | [`/Simulations`](./Simulations) | Flood Fill logic and supporting files for simulating maze navigation. |
 | [`/Romi32u4`](./Romi32u4) | Code for the current Romi 32U4-based platform. |
