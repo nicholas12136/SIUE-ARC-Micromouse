@@ -111,10 +111,14 @@ robot (changing algorithms is allowed)
 
 ---
 
-## Navigation Progress
-Our navigation strategy is built around a single algorithm:
+## Navigation Process
+The mouse uses **Flood Fill** as its core algorithm — a form of Breadth-First Searching that works by "pouring water" from the goal back to the start, assigning distance values to each cell. The mouse always moves toward lower-value cells, driving it toward the goal. ([**Video explanation**](https://www.youtube.com/watch?v=ktn3C7aXVR0))
 
--  **Flood Fill:** A form of Breadth-First Searching, it works by "pouring water" from the goal to the start, assigning distance values to cells. The mouse then moves toward lower-value cells, effectively calculating the shortest path. ([**Video explanation**](https://www.youtube.com/watch?v=ktn3C7aXVR0))
+Maze solving is broken into three sequential phases:
+
+1. **Search Phase:** The mouse explores the maze from the starting corner, continuously updating its internal map as new walls are discovered. Flood Fill is recalculated after each new wall is detected, always routing the mouse toward the goal via the best known path.
+2. **Return Phase:** Once the goal is reached, the mouse navigates back to the starting position using the map it has built, again guided by Flood Fill.
+3. **Goal Run:** With a complete map in hand, the mouse executes a final optimized run from start to goal, following the shortest path determined during the search phase.
 
 ---
 
