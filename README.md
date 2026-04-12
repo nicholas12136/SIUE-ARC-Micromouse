@@ -185,7 +185,7 @@ Maze solving is broken into three sequential phases:
 
 ---
 
-### Legacy ESP32 Setup (VS Code + PlatformIO)
+### ESP32 Setup (VS Code + PlatformIO)
 
 > *This setup applies to the code found in [`/Past Firmware`](./Past%20Firmware) only.*
 
