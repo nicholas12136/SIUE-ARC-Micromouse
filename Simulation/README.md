@@ -112,4 +112,10 @@ A run counts as a **pass** only if the mouse completes all three phases — reac
 python test_harness.py
 ```
 
-**Current metrics:** 100% pass rate across 100 mazes, averaging 68 steps per full run.
+**Current metrics:** 100% pass rate across 1000 mazes, averaging 66.5 steps per full run.
+
+<p align="center">
+  <img src="../.assets/images/Simulation-output.jpg" width="600">
+</p>
+
+> *Test harness output from a 1000-maze validation run. Breaks down average steps and turn counts per run, confirming 0 failures across all generated mazes.*
