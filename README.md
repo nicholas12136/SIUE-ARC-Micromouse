@@ -98,7 +98,7 @@ robot (changing algorithms is allowed)
 
 ---
 
-## Tech Stack
+## Current Tech Stack
 > *Current iteration uses a Romi 32U4 + Raspberry Pi combination.*
 
 * **Primary Controller:** [Romi 32U4 Control Board](https://www.pololu.com/docs/0J69/all) — handles low-level motor control, encoder feedback, and sensor interfacing.
@@ -139,13 +139,68 @@ Maze solving is broken into three sequential phases:
 ## Development Setup
 
 <details>
-<summary><b>Click to expand: Software Installation</b></summary>
+<summary><b>Click to expand: Cloning the Repository (GitHub Desktop)</b></summary>
 
-1. **Install VS Code**
-2. **Install PlatformIO Extension** (for ESP32 development).
-3. **Clone the Repo:**
-   ```bash 
-   git clone [https://github.com/](https://github.com/)[your-username]/[your-repo-name].git
-</ul>
+1. Download and install [GitHub Desktop](https://desktop.github.com/).
+2. Sign in with your GitHub account.
+3. Click **File → Clone Repository**.
+4. Select the **URL** tab and paste:
+   ```
+   https://github.com/SIUE-ARC/SIUE-ARC-Micromouse.git
+   ```
+5. Choose a local path and click **Clone**.
+
+</details>
+
+---
+
+<details>
+<summary><b>Click to expand: Romi 32U4 Setup (Arduino IDE)</b></summary>
+
+1. Download and install the [Arduino IDE](https://www.arduino.cc/en/software).
+2. Open Arduino IDE and go to **File → Preferences**.
+3. Under *Additional Boards Manager URLs*, add:
+   ```
+   https://files.pololu.com/arduino/package_pololu_index.json
+   ```
+4. Go to **Tools → Board → Boards Manager**, search for **Pololu A-Star**, and install it.
+5. Select **Tools → Board → Pololu A-Star 32U4** as your target board.
+6. Install the required libraries via **Tools → Manage Libraries**:
+   * Search for **Romi32U4** and install it.
+   * Search for **PololuRPiSlave** and install it.
+7. Open the sketch from the [`/Romi32u4`](./Romi32u4) folder and upload to the board.
+
+</details>
+
+---
+
+<details>
+<summary><b>Click to expand: Raspberry Pi SSH Setup (Windows)</b></summary>
+
+1. Ensure SSH is enabled on the Raspberry Pi (via `raspi-config` or the Pi OS desktop under **Preferences → Raspberry Pi Configuration → Interfaces**).
+2. Connect the Pi to the same network as your Windows machine (or directly via USB/Ethernet).
+3. Open **Windows Terminal** or **Command Prompt** and run:
+   ```bash
+   ssh pi@<raspberry-pi-ip-address>
+   ```
+   Replace `<raspberry-pi-ip-address>` with the Pi's actual IP (find it by running `hostname -I` on the Pi).
+4. Enter the Pi's password when prompted (default is `raspberry` unless changed).
+5. Once connected, navigate to the project files and run the Python scripts from the [`/RPi`](./RPi) folder as needed.
+
+</details>
+
+---
+
+<details>
+<summary><b>Click to expand: Legacy ESP32 Setup (VS Code + PlatformIO)</b></summary>
+
+> *This setup applies to the code found in [`/Past Firmware`](./Past%20Firmware) only.*
+
+1. Download and install [VS Code](https://code.visualstudio.com/).
+2. Install the **PlatformIO IDE** extension from the VS Code Extensions Marketplace.
+3. Open the desired project folder from `/Past Firmware` in VS Code.
+4. PlatformIO will automatically detect the `platformio.ini` config and install dependencies.
+5. Connect the ESP32 and use the PlatformIO **Upload** button to flash the board.
+
 </details>
 
