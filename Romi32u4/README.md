@@ -66,8 +66,8 @@ Same as a 90° turn but drives to `TURN180_TARGET = 1350`.
 | `BASE_SPEED` | 200 | Cruise speed (motor PWM units) |
 | `TURN_SPEED` | 150 | Speed used during turns |
 | `CELL_TARGET` | 1000 | Encoder counts per cell |
-| `TURN_TARGET` | 630 | Encoder counts for 90° turn |
-| `TURN180_TARGET` | 1350 | Encoder counts for 180° turn |
+| `TURN_TARGET` | 650 | Encoder counts for 90° turn |
+| `TURN180_TARGET` | 1375 | Encoder counts for 180° turn |
 | `RAMP_STEP` | 6 | Speed increment per ramp tick |
 | `RAMP_DELAY` | 10ms | Delay between ramp ticks |
 | `DECEL_START` | 100 | Encoder counts before target to begin deceleration |
