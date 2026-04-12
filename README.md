@@ -120,6 +120,20 @@ Maze solving is broken into three sequential phases:
 2. **Return Phase:** Once the goal is reached, the mouse navigates back to the starting position using the map it has built, again guided by Flood Fill.
 3. **Goal Run:** With a complete map in hand, the mouse executes a final optimized run from start to goal, following the shortest path determined during the search phase.
 
+<table border="0">
+  <tr>
+    <td width="50%" align="center">
+      <img src=".assets/images/mouse-running2.gif" width="65%">
+      </img>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <i>Visualization of the <b>Flood Fill Algorithm</b> mapping the 10x10 maze.</i>
+    </td>
+  </tr>
+</table>
+
 ---
 
 ## Development Setup
@@ -135,20 +149,3 @@ Maze solving is broken into three sequential phases:
 </ul>
 </details>
 
----
-
-## Recent Progress
-
-<table border="0">
-  <tr>
-    <td width="50%" align="center">
-      <img src=".assets/images/mouse-running2.gif" width="65%">
-      </img>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <i>Visualization of the <b>Flood Fill Algorithm</b> mapping the 10x10 maze.</i>
-    </td>
-  </tr>
-</table>
