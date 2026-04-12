@@ -102,7 +102,7 @@ robot (changing algorithms is allowed)
 > *Current iteration uses a Romi 32U4 + Raspberry Pi combination.*
 
 * **Primary Controller:** [Romi 32U4 Control Board](https://www.pololu.com/docs/0J69/all) — handles low-level motor control, encoder feedback, and sensor interfacing.
-* **Companion Computer:** Raspberry Pi — runs higher-level navigation logic and communicates with the Romi over serial.
+* **Companion Computer:** Raspberry Pi — runs high-level navigation logic and communicates with the Romi over I2C.
 * **Platform:** [Romi Chassis & Motor Kit](https://www.pololu.com/product/3544) — motors, encoders, and drivetrain are integrated into the Romi platform.
 * **Sensors:** Wall detection uses a mix of sensor types:
   * *Left & Right:* GP2Y0A41YK0F Sharp IR Analog Distance Sensors.
