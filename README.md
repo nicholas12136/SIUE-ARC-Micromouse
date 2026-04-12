@@ -90,11 +90,10 @@ robot (changing algorithms is allowed)
 
 | Folder | Purpose |
 | :--- | :--- |
-| [`/algorithms`](./algorithms) | Maze-solving logic (Flood Fill, DFS). |
-| [`/firmware`](./firmware) | ESP32 source code & PID control. |
-| [`/hardware`](./hardware) | CAD & PCB Schematics. |
-| [`/simulations`](./simulations) | Logic testing environments. |
-| [`/doc`](./doc) | NRC Rules & Engineering Notebook. |
+| [`/Past Firmware`](./Past%20Firmware) | Legacy ESP32 source code, kept for reference if an ESP32-based design is revisited. |
+| [`/Hardware`](./Hardware) | Schematics for all current components and STP print files for the robot chassis. |
+| [`/Simulations`](./Simulations) | Flood Fill logic and supporting files for simulating maze navigation. |
+| [`/Romi32u4`](./Romi32u4) | Code for the current Romi 32U4-based platform. |
 | **[OneDrive Hub]** | [**Click here for OneDrive**](https://siuecougars-my.sharepoint.com/:f:/r/personal/ngarmon_siue_edu/Documents/ARC/Micro%20Mouse?csf=1&web=1&e=Olx0Ui) |
 
 ---
@@ -108,10 +107,9 @@ robot (changing algorithms is allowed)
 ---
 
 ## Navigation Progress
-We are currently iterating on two main logic paths:
+Our navigation strategy is built around a single algorithm:
 
 -  **Flood Fill:** A form of Breadth-First Searching, it works by "pouring water" from the goal to the start, assigning distance values to cells. The mouse then moves toward lower-value cells, effectively calculating the shortest path. ([**Video explanation**](https://www.youtube.com/watch?v=ktn3C7aXVR0))
--  **Depth-First Search (Recursive Backtracking):** Explores as far as possible along each branch before backtracking. It is "blind" to the shortest path until it has explored all options. Great for mapping an entire maze because it forces the mouse to explore every nook and cranny, but it is high unlikely to find the shortest path on the first try.
 
 ---
 
