@@ -90,10 +90,10 @@ robot (changing algorithms is allowed)
 
 | Folder | Purpose |
 | :--- | :--- |
-| [`/Past Firmware`](./Past%20Firmware) | ESP32 source code, kept for reference when an ESP32-based design is revisited. |
 | [`/Hardware`](./Hardware) | Schematics for all current components and STP print files for the robot chassis. |
-| [`/Simulations`](./Simulations) | Flood Fill logic and supporting files for simulating maze navigation. |
+| [`/Past Firmware`](./Past%20Firmware) | ESP32 source code, kept for reference when an ESP32-based design is revisited. |
 | [`/Romi32u4`](./Romi32u4) | Code for the current Romi 32U4-based platform. |
+| [`/Simulations`](./Simulations) | Flood Fill logic and supporting files for simulating maze navigation. |
 | **[OneDrive Hub]** | [**Click here for OneDrive**](https://siuecougars-my.sharepoint.com/:f:/r/personal/ngarmon_siue_edu/Documents/ARC/Micro%20Mouse?csf=1&web=1&e=Olx0Ui) |
 
 ---
