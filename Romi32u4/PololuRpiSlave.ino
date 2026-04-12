@@ -29,15 +29,15 @@ PololuRPiSlave<struct Data, 14> slave;  // update count
 const int   BASE_SPEED      = 200;
 const float KP_ENC          = 0.65;
 const int   CELL_TARGET     = 1000; //900;
-const int   TURN_TARGET     = 630;
-const int   TURN180_TARGET  = 1350;
-const int   TURN_SPEED      = 150;
+const int TURN_TARGET       = 650;      // Was 630, reduced by 65
+const int TURN180_TARGET    = 1375;  // Was 1350, reduced by 65
+const int   TURN_SPEED      = 100;
 const int   RAMP_STEP       = 6;
 const int   RAMP_DELAY      = 10;
 const int   DECEL_START     = 100;  
 
 // ── Sensor pins ───────────────────────────────────────────────────────
-const int IR_FRONT_PIN = 7;
+const int IR_FRONT_PIN = 11;
 const int IR_LEFT_PIN  = A2;
 const int IR_RIGHT_PIN = A3;
 
@@ -161,50 +161,47 @@ void moveOneCell()
 
 void turnRight90()
 {
-  // detachInterrupt(digitalPinToInterrupt(IR_FRONT_PIN));  // disable during turn
   encoders.getCountsAndResetLeft();
   encoders.getCountsAndResetRight();
-  motors.setSpeeds(TURN_SPEED, -TURN_SPEED);
+  motors.setSpeeds(TURN_SPEED, -TURN_SPEED);  // CHANGED: back to original
   while (true) {
     int16_t L = encoders.getCountsLeft();
     int16_t R = encoders.getCountsRight();
-    if ((L >= TURN_TARGET) && (-R >= TURN_TARGET)) break;
+    int avgCount = (abs(L) + abs(R)) / 2;
+    if (avgCount >= TURN_TARGET) break;
   }
   motors.setSpeeds(0, 0);
-  delay(200);
-  // attachInterrupt(digitalPinToInterrupt(IR_FRONT_PIN), onFrontWall, FALLING);  // re-enable
+  delay(400);
 }
 
 void turnLeft90()
 {
-  // detachInterrupt(digitalPinToInterrupt(IR_FRONT_PIN));
   encoders.getCountsAndResetLeft();
   encoders.getCountsAndResetRight();
-  motors.setSpeeds(-TURN_SPEED, TURN_SPEED);
+  motors.setSpeeds(-TURN_SPEED, TURN_SPEED);  // CHANGED: back to original
   while (true) {
     int16_t L = encoders.getCountsLeft();
     int16_t R = encoders.getCountsRight();
-    if ((-L >= TURN_TARGET) && (R >= TURN_TARGET)) break;
+    int avgCount = (abs(L) + abs(R)) / 2;
+    if (avgCount >= TURN_TARGET) break;
   }
   motors.setSpeeds(0, 0);
-  delay(200);
-  // attachInterrupt(digitalPinToInterrupt(IR_FRONT_PIN), onFrontWall, FALLING);
+  delay(400);
 }
 
 void turnRight180()
 {
-  // detachInterrupt(digitalPinToInterrupt(IR_FRONT_PIN));
   encoders.getCountsAndResetLeft();
   encoders.getCountsAndResetRight();
-  motors.setSpeeds(TURN_SPEED, -TURN_SPEED);
+  motors.setSpeeds(TURN_SPEED, -TURN_SPEED);  // CHANGED: back to original
   while (true) {
     int16_t L = encoders.getCountsLeft();
     int16_t R = encoders.getCountsRight();
-    if ((L >= TURN180_TARGET) && (-R >= TURN180_TARGET)) break;
+    int avgCount = (abs(L) + abs(R)) / 2;
+    if (avgCount >= TURN180_TARGET) break;
   }
   motors.setSpeeds(0, 0);
-  delay(200);
-  // attachInterrupt(digitalPinToInterrupt(IR_FRONT_PIN), onFrontWall, FALLING);
+  delay(400);
 }
 
 // Interrupt service routine — fires instantly when front IR goes LOW

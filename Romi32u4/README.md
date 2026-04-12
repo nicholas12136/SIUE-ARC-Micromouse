@@ -38,7 +38,7 @@ The I²C interface is built around a single struct that both sides of the connec
 
 | Sensor | Pin | Type |
 | :--- | :--- | :--- |
-| Front IR | D7 | Digital (LOW = wall detected) |
+| Front IR | D11 | Digital (LOW = wall detected) |
 | Left IR | A2 | Analog (threshold: 200) |
 | Right IR | A3 | Analog (threshold: 200) |
 
