@@ -107,7 +107,6 @@ robot (changing algorithms is allowed)
 * **Sensors:** Wall detection uses a mix of sensor types:
   * *Left & Right:* GP2Y0A41YK0F Sharp IR Analog Distance Sensors.
   * *Front:* Generic digital IR obstacle avoidance sensor.
-* **Actuators & Design:** Built into the Romi platform (dual DC motors with encoders, integrated motor driver).
 
 ---
 
