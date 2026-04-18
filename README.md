@@ -19,7 +19,6 @@
 
 [![Competition](https://img.shields.io/badge/Competition-NRC_2026-red)](https://irp.cdn-website.com/9297868f/files/uploaded/NRCContestRules2026-4d8e93e7.pdf)
 [![Platform](https://img.shields.io/badge/Platform-ESP32-blue)](https://randomnerdtutorials.com/getting-started-with-esp32/)
-[![SHARP-IR Sensor](https://img.shields.io/badge/Datasheet-GP2Y0A41SK0F-black)](https://global.sharp/products/device/lineup/data/pdf/datasheet/gp2y0a41sk_e.pdf)
 [![Language](https://img.shields.io/badge/Language-C++-green)](https://www.w3schools.com/cpp/default.asp)
 [![License](https://img.shields.io/badge/Danger-!!!-purple)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
@@ -107,7 +106,7 @@ robot (changing algorithms is allowed)
 * **Companion Computer:** Raspberry Pi — runs high-level navigation logic and communicates with the Romi over I²C.
 * **Platform:** [Romi Chassis & Motor Kit](https://www.pololu.com/product/3544) — motors, encoders, and drivetrain are integrated into the Romi platform.
 * **Sensors:** Wall detection uses a mix of sensor types:
-  * *Left & Right:* [GP2Y0A41YK0F Sharp IR Analog Distance Sensors.](https://global.sharp/products/device/lineup/data/pdf/datasheet/gp2y0a41sk_e.pdf)
+  * *Left & Right:* [GP2Y0A41YK0F](https://global.sharp/products/device/lineup/data/pdf/datasheet/gp2y0a41sk_e.pdf) Sharp IR Analog Distance Sensors.
   * *Front:* Generic digital IR obstacle avoidance sensor.
 
 ---
