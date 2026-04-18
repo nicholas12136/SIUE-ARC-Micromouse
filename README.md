@@ -107,7 +107,7 @@ robot (changing algorithms is allowed)
 * **Companion Computer:** Raspberry Pi — runs high-level navigation logic and communicates with the Romi over I²C.
 * **Platform:** [Romi Chassis & Motor Kit](https://www.pololu.com/product/3544) — motors, encoders, and drivetrain are integrated into the Romi platform.
 * **Sensors:** Wall detection uses a mix of sensor types:
-  * *Left & Right:* GP2Y0A41YK0F Sharp IR Analog Distance Sensors (see datasheet icon at top of README).
+  * *Left & Right:* [GP2Y0A41YK0F Sharp IR Analog Distance Sensors.](https://global.sharp/products/device/lineup/data/pdf/datasheet/gp2y0a41sk_e.pdf)
   * *Front:* Generic digital IR obstacle avoidance sensor.
 
 ---
