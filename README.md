@@ -107,7 +107,7 @@ robot (changing algorithms is allowed)
 * **Companion Computer:** Raspberry Pi — runs high-level navigation logic and communicates with the Romi over I²C.
 * **Platform:** [Romi Chassis & Motor Kit](https://www.pololu.com/product/3544) — motors, encoders, and drivetrain are integrated into the Romi platform.
 * **Sensors:** Wall detection uses a mix of sensor types:
-  * *Left & Right:* GP2Y0A41YK0F Sharp IR Analog Distance Sensors.
+  * *Left & Right:* GP2Y0A41YK0F Sharp IR Analog Distance Sensors (see datasheet icon at top of README).
   * *Front:* Generic digital IR obstacle avoidance sensor.
 
 ---
@@ -239,7 +239,7 @@ We competed at the **National Robotics Challenge** on April 17, 2026. Here's a l
 ## Key Takeaways and Potential Improvements
 
 <details>
-<summary><b>CLick to expand<b></summary>
+<summary><b>Click for knowledge<b></summary>
 
 Our current design could be improved upon with these alterations (most likely):
   1. It was noted at competition that the Romi32 could be controlled by an ESP32 via serial communication. This was not previously known and is definitely worth looking into for future iterations. While the raspberry pi was nice it was rather tedious.
