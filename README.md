@@ -91,6 +91,7 @@ robot (changing algorithms is allowed)
 
 | Folder | Purpose |
 | :--- | :--- |
+| [`/Competition Notebook`](./Competition%20Notebook) | Project documention required upon NRC submission. |
 | [`/ESP32 Firmware`](./Past%20Firmware) | ESP32 source code, kept for reference when an ESP32-based design is revisited. |
 | [`/Hardware`](./Hardware) | Schematics for all current components and STP print files for the robot chassis. |
 | [`/Romi32u4`](./Romi32u4) | Code for the current Romi 32U4-based platform. |
