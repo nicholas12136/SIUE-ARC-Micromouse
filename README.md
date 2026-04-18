@@ -239,7 +239,7 @@ We competed at the **National Robotics Challenge** on April 17, 2026. Here's a l
 ## Key Takeaways and Potential Improvements
 
 <details>
-<summary><b>Click for knowledge<b></summary>
+<summary><b>Click for knowledge</b></summary>
 
 **Our current design could be improved upon with these alterations (most likely):**
   1. It was noted at competition that the Romi32 could be controlled by an ESP32 via serial communication. This was not previously known and is definitely worth looking into for future iterations. While the raspberry pi was nice it was rather tedious.
@@ -251,5 +251,4 @@ We competed at the **National Robotics Challenge** on April 17, 2026. Here's a l
   2. Another robot (that also used the Romi32 microcontroller), when performing the RETURN and QUICK RUN phases, would perform a multi-cell movement if possible. This means that if there was a corridor 2+ cells long, instead of moving through one cell at a time, it would move the entire length of the corridor in one movement, saving overall time. 
   3. It was also noted that it would potentially be beneficial to add the ability for the robot to remember the maze between different trial runs. This came about from the "30-second penalty" rule that occurred when you removed the robot from the maze at any time. Since this would most likely happen regardless unless you have a perfect robot, the robot would find the center in one run, get removed from the maze, then start the next run with the maze information it gathered from previous runs.
 
-  <ul>
   </details>
