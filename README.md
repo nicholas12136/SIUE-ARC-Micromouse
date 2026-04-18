@@ -192,6 +192,13 @@ Maze solving is broken into three sequential phases:
 
 ---
 
+<p align="center">
+  <img src=".assets/images/NRC_maze_example.png" width="600">
+</p> 
+
+> *Example maze provided in 2026 NRC Contest Manual.*
+---
+
 ## Competition Results — NRC 2026
 
 We competed at the **National Robotics Challenge** on April 17, 2026. Here's a look at how it went.
