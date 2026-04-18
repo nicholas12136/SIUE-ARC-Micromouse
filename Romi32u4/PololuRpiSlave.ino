@@ -28,9 +28,10 @@ PololuRPiSlave<struct Data, 14> slave;  // update count
 // ── Tuning ────────────────────────────────────────────────────────────
 const int   BASE_SPEED      = 200;
 const float KP_ENC          = 0.65;
-const int   CELL_TARGET     = 1000; //900;
-const int TURN_TARGET       = 650;      // Was 630, reduced by 65
-const int TURN180_TARGET    = 1375;  // Was 1350, reduced by 65
+const int   CELL_TARGET     = 1055;  //900;
+const int TURN_TARGET_LEFT  = 685;
+const int TURN_TARGET_RIGHT = 655;   // Was 660
+const int TURN180_TARGET    = 1410;  // Was 1350
 const int   TURN_SPEED      = 100;
 const int   RAMP_STEP       = 6;
 const int   RAMP_DELAY      = 10;
@@ -163,12 +164,12 @@ void turnRight90()
 {
   encoders.getCountsAndResetLeft();
   encoders.getCountsAndResetRight();
-  motors.setSpeeds(TURN_SPEED, -TURN_SPEED);  // CHANGED: back to original
+  motors.setSpeeds(TURN_SPEED, -TURN_SPEED);
   while (true) {
     int16_t L = encoders.getCountsLeft();
     int16_t R = encoders.getCountsRight();
     int avgCount = (abs(L) + abs(R)) / 2;
-    if (avgCount >= TURN_TARGET) break;
+    if (avgCount >= TURN_TARGET_RIGHT) break;  // Changed
   }
   motors.setSpeeds(0, 0);
   delay(400);
@@ -178,12 +179,12 @@ void turnLeft90()
 {
   encoders.getCountsAndResetLeft();
   encoders.getCountsAndResetRight();
-  motors.setSpeeds(-TURN_SPEED, TURN_SPEED);  // CHANGED: back to original
+  motors.setSpeeds(-TURN_SPEED, TURN_SPEED);
   while (true) {
     int16_t L = encoders.getCountsLeft();
     int16_t R = encoders.getCountsRight();
     int avgCount = (abs(L) + abs(R)) / 2;
-    if (avgCount >= TURN_TARGET) break;
+    if (avgCount >= TURN_TARGET_LEFT) break;  // Changed
   }
   motors.setSpeeds(0, 0);
   delay(400);

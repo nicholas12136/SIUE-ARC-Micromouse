@@ -17,7 +17,7 @@
 
 
 
-[![Competition](https://img.shields.io/badge/Competition-NRC_2026-red)](https://irp.cdn-website.com/9297868f/files/uploaded/NRCContestRules2026.pdf)
+[![Competition](https://img.shields.io/badge/Competition-NRC_2026-red)](https://irp.cdn-website.com/9297868f/files/uploaded/NRCContestRules2026-4d8e93e7.pdf)
 [![Platform](https://img.shields.io/badge/Platform-ESP32-blue)](https://randomnerdtutorials.com/getting-started-with-esp32/)
 [![Language](https://img.shields.io/badge/Language-C++-green)](https://www.w3schools.com/cpp/default.asp)
 [![License](https://img.shields.io/badge/Danger-!!!-purple)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
@@ -84,6 +84,43 @@ robot (changing algorithms is allowed)
 </p> 
 
 > *Example maze provided in 2026 NRC Contest Manual.*
+---
+
+## Competition Results — NRC 2026
+
+We competed at the **National Robotics Challenge** on April 17, 2026. Here's a look at how it went.
+
+<table border="0">
+  <tr>
+    <td width="50%" align="center">
+      <img src=".assets/images/currentbot.jpg" width="90%">
+      <br><i>Our robot heading into competition.</i>
+    </td>
+    <td width="50%" align="center">
+      <img src=".assets/images/competitionmaze.jpg" width="90%">
+      <br><i>The maze we faced on competition day.</i>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src=".assets/images/results.jpg" width="500">
+  <br><i>Our official final run time.</i>
+</p>
+
+<table border="0">
+  <tr>
+    <td width="50%" align="center">
+      <img src=".assets/images/allrobots.jpg" width="90%">
+      <br><i>All robots competing at NRC 2026.</i>
+    </td>
+    <td width="50%" align="center">
+      <img src=".assets/images/guysandmaze.jpg" width="90%">
+      <br><i>The team after the competition.</i>
+    </td>
+  </tr>
+</table>
+
 ---
 
 ## Repository Structure
