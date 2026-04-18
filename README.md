@@ -37,20 +37,6 @@ Our team is developing an autonomous "Mouse" to compete in the **National Roboti
 * **Autonomy:** No external communication once the maze layout is disclosed.
 * **Scoring:** Based on a factor of things but overall shortest time wins.
 
-<table border="0">
-  <tr>
-    <td width="50%" align="center">
-      <img src=".assets/images/mouse-running2.gif" width="65%">
-      </img>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <i>Visualization of the <b>Flood Fill Algorithm</b> mapping the 10x10 maze.</i>
-    </td>
-  </tr>
-</table>
-
 <details>
 <summary><b>Click for more extensive rules</b></summary>
 
@@ -91,6 +77,20 @@ robot (changing algorithms is allowed)
 
 </ul>
 </details>
+
+<table border="0">
+  <tr>
+    <td width="50%" align="center">
+      <img src=".assets/images/mouse-running2.gif" width="65%">
+      </img>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <i>Visualization of the <b>Flood Fill Algorithm</b> mapping the 10x10 maze.</i>
+    </td>
+  </tr>
+</table>
 
 ---
 
