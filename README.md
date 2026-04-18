@@ -77,49 +77,6 @@ robot (changing algorithms is allowed)
 
 </ul>
 </details>
- 
-
-<p align="center">
-  <img src=".assets/images/NRC_maze_example.png" width="600">
-</p> 
-
-> *Example maze provided in 2026 NRC Contest Manual.*
----
-
-## Competition Results — NRC 2026
-
-We competed at the **National Robotics Challenge** on April 17, 2026. Here's a look at how it went.
-
-<table border="0">
-  <tr>
-    <td width="50%" align="center">
-      <img src=".assets/images/currentbot.jpg" width="90%">
-      <br><i>Our robot heading into competition.</i>
-    </td>
-    <td width="50%" align="center">
-      <img src=".assets/images/competitionmaze.jpg" width="90%">
-      <br><i>The maze we faced on competition day.</i>
-    </td>
-  </tr>
-</table>
-
-<p align="center">
-  <img src=".assets/images/results.jpg" width="500">
-  <br><i>Our official final run time.</i>
-</p>
-
-<table border="0">
-  <tr>
-    <td width="50%" align="center">
-      <img src=".assets/images/allrobots.jpg" width="90%">
-      <br><i>All robots competing at NRC 2026.</i>
-    </td>
-    <td width="50%" align="center">
-      <img src=".assets/images/guysandmaze.jpg" width="90%">
-      <br><i>The team after the competition.</i>
-    </td>
-  </tr>
-</table>
 
 ---
 
@@ -233,3 +190,46 @@ Maze solving is broken into three sequential phases:
 
 </details>
 
+---
+
+<p align="center">
+  <img src=".assets/images/NRC_maze_example.png" width="600">
+</p> 
+
+> *Example maze provided in 2026 NRC Contest Manual.*
+---
+
+## Competition Results — NRC 2026
+
+We competed at the **National Robotics Challenge** on April 17, 2026. Here's a look at how it went.
+
+<table border="0">
+  <tr>
+    <td width="50%" align="center">
+      <img src=".assets/images/currentbot.jpg" width="90%">
+      <br><i>Our robot heading into competition.</i>
+    </td>
+    <td width="50%" align="center">
+      <img src=".assets/images/competitionmaze.jpg" width="90%">
+      <br><i>The maze we faced on competition day.</i>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src=".assets/images/results.jpg" width="500">
+  <br><i>Our official final run time.</i>
+</p>
+
+<table border="0">
+  <tr>
+    <td width="50%" align="center">
+      <img src=".assets/images/allrobots.jpg" width="90%">
+      <br><i>All robots competing at NRC 2026.</i>
+    </td>
+    <td width="50%" align="center">
+      <img src=".assets/images/guysandmaze.jpg" width="90%">
+      <br><i>The team after the competition.</i>
+    </td>
+  </tr>
+</table>
