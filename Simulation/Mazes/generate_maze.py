@@ -223,7 +223,7 @@ def save_maze(horiz, vert, filename, width=10, height=10, target_dir=None):
     Maze boundary edges are always walls.
     """
     if target_dir is None:
-        target_dir = r"C:\Users\npg20\Documents\ARC\Micromouse\mms\mazes"
+        target_dir = r"C:\*target directory"
 
     if not os.path.exists(target_dir):
         os.makedirs(target_dir)
@@ -273,4 +273,4 @@ def generate_batch(count=10, prefix="maze", target_dir=None):
 # Entry point — change generate_batch count to however many you need
 # -----------------------------------------------------------------------
 if __name__ == "__main__":
-    generate_batch(500)
+    generate_batch(*number of mazes to generate*)
