@@ -223,19 +223,41 @@ def flood_fill(targets, visited_only=False):
 
 def robot_turn_right():
     global heading
-    turn_right()
+    s = turn_right()
     heading = (heading + 1) % 4
     print(f"  Turned right — now facing {HEADING_NAMES[heading]}")
+    if s:
+        print_sensors_full(s, "    Turn complete")
 
 def robot_turn_left():
     global heading
-    turn_left()
+    s = turn_left()
     heading = (heading + 3) % 4
     print(f"  Turned left — now facing {HEADING_NAMES[heading]}")
+    if s:
+        print_sensors_full(s, "    Turn complete")
 
 def robot_move_forward():
     global current_x, current_y
     s = move_forward()
+
+    # Check if we actually moved a full cell
+    if s is None:
+        print("  ERROR: move_forward() returned None")
+        return s
+
+    # Encoder values should be ~1700+ for a full cell move
+    # If less than, say, 1200 counts, we hit a wall early and didn't complete the move
+    MIN_CELL_DISTANCE = 1000  # Adjust this threshold as needed
+
+    avg_encoder = (s['encLeft'] + s['encRight']) / 2
+
+    if avg_encoder < MIN_CELL_DISTANCE:
+        print(f"  WARNING: Move incomplete! Only {avg_encoder:.0f} counts (need {MIN_CELL_DISTANCE}+)")
+        print(f"  Position NOT updated — still at ({current_x}, {current_y})")
+        return s
+
+    # Move was successful — update position
     current_x += DX[heading]
     current_y += DY[heading]
     visited[current_x][current_y] = True
@@ -250,8 +272,10 @@ def face_direction(target_dir):
     global heading
 
     if (target_dir - heading + 4) % 4 == 2:
-        turn_180()
+        s = turn_180()  # Capture the return value
         heading = (heading + 2) % 4
+        if s:
+            print_sensors_full(s, "    180° turn complete")  # Print encoder values
         return
 
     while heading != target_dir:
