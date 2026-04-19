@@ -93,6 +93,7 @@ robot (changing algorithms is allowed)
 | [`/Competition Notebook`](./Competition%20Notebook) | Project documention required upon NRC submission. |
 | [`/ESP32 Firmware`](./Past%20Firmware) | ESP32 source code, kept for reference when an ESP32-based design is revisited. |
 | [`/Hardware`](./Hardware) | Schematics for all current components and STP print files for the robot chassis. |
+| [`/NRC 2025 Code`](./NRC%202025%20Code) | Sketches and reference files from ARC's 2025 Micromouse competition attempt. |
 | [`/Romi32u4`](./Romi32u4) | Code for the current Romi 32U4-based platform. |
 | [`/Simulations`](./Simulations) | Flood Fill logic and supporting files for simulating maze navigation. |
 | **[OneDrive Hub]** | [**Click here for OneDrive**](https://siuecougars-my.sharepoint.com/:f:/r/personal/ngarmon_siue_edu/Documents/ARC/Micro%20Mouse?csf=1&web=1&e=Olx0Ui) |
