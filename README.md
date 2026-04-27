@@ -217,10 +217,18 @@ We competed at the **National Robotics Challenge** on April 17, 2026. Here's a l
   </tr>
 </table>
 
-<p align="center">
-  <img src=".assets/images/results.jpg" width="500">
-  <br><i>Our official final run time.</i>
-</p>
+<table> border="0'>
+  <tr>
+    <td width="50%" align="center">
+      <img src=".assets/images/2026-Finishing.png" width="90%">
+      <br><i>Our official final standings (Gold! WOO HOO!).</i>
+    </td>
+    <td width="50%" align="center">
+        <img src=".assets/images/results.jpg" width="90%">
+      <br><i>Our official final time.</i>
+    </td>
+  </tr>
+</table>
 
 <table border="0">
   <tr>
