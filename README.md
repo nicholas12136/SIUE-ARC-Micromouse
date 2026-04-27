@@ -218,7 +218,7 @@ We competed at the **National Robotics Challenge** on April 17, 2026. Here's a l
   <tr>
     <td width="50%" align="center">
       <img src=".assets/images/2026-Finishing.png" width="90%">
-      <br><i>Our official final standings (Gold! WOO HOO!).</i>
+      <br><i>Our official final standings (Gold, Woo Hoo!).</i>
     </td>
     <td width="50%" align="center">
       <img src=".assets/images/results.jpg" width="90%">
