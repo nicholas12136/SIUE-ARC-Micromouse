@@ -217,7 +217,7 @@ We competed at the **National Robotics Challenge** on April 17, 2026. Here's a l
   </tr>
 </table>
 
-<table> border="0'>
+<table border="0'>
   <tr>
     <td width="50%" align="center">
       <img src=".assets/images/2026-Finishing.png" width="90%">
